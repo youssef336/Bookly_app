@@ -1,7 +1,9 @@
+// ignore_for_file: camel_case_types
+
 import 'package:bookly_app/constant%20.dart';
 import 'package:bookly_app/features/splash/presentation/views/splash_View.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/get_core.dart';
+
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
