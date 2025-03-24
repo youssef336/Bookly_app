@@ -8,19 +8,17 @@ class FeaturesListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: AspectRatio(
-        aspectRatio: 2.7 / 4,
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.blueAccent,
+    return AspectRatio(
+      aspectRatio: 2.5 / 4,
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.blueAccent,
 
-            image: const DecorationImage(
-              image: AssetImage(AssetsData.testImage),
-              fit: BoxFit.fill,
-            ),
-            borderRadius: BorderRadius.circular(16),
+          image: const DecorationImage(
+            image: AssetImage(AssetsData.testImage),
+            fit: BoxFit.fill,
           ),
+          borderRadius: BorderRadius.circular(16),
         ),
       ),
     );
