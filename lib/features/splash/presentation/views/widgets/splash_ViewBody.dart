@@ -1,9 +1,8 @@
-// ignore_for_file: file_names, non_constant_identifier_names
+// ignore_for_file: file_names, non_constant_identifier_names, use_build_context_synchronously
 
-import 'package:bookly_app/constant%20.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/assets.dart';
-import 'package:bookly_app/features/home/presentation/view/home.dart';
+
 import 'package:bookly_app/features/splash/presentation/views/widgets/animation_splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -59,11 +58,6 @@ class _SplashViewbodyState extends State<SplashViewbody>
 
   void navigatetohome() {
     Future.delayed(const Duration(seconds: 3), () {
-      // Get.to(
-      //   () => const HomeView(),
-      //   transition: Transition.zoom,
-      //   duration: KTransationDuration,
-      // );
       GoRouter.of(context).go(AppRouter.kHomeView);
     });
   }

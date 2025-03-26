@@ -1,7 +1,10 @@
+// ignore_for_file: constant_identifier_names, duplicate_ignore
+
 import 'package:bookly_app/constant%20.dart';
 import 'package:flutter/widgets.dart';
 
 abstract class Styles {
+  // ignore: constant_identifier_names
   static const TextStyle18 = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w600,
