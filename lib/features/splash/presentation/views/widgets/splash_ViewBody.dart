@@ -1,12 +1,12 @@
 // ignore_for_file: file_names, non_constant_identifier_names
 
 import 'package:bookly_app/constant%20.dart';
+import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/features/home/presentation/view/home.dart';
 import 'package:bookly_app/features/splash/presentation/views/widgets/animation_splash_view.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/get_navigation.dart';
-import 'package:get/utils.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashViewbody extends StatefulWidget {
   const SplashViewbody({super.key});
@@ -59,11 +59,12 @@ class _SplashViewbodyState extends State<SplashViewbody>
 
   void navigatetohome() {
     Future.delayed(const Duration(seconds: 3), () {
-      Get.to(
-        () => const HomeView(),
-        transition: Transition.zoom,
-        duration: KTransationDuration,
-      );
+      // Get.to(
+      //   () => const HomeView(),
+      //   transition: Transition.zoom,
+      //   duration: KTransationDuration,
+      // );
+      GoRouter.of(context).go(AppRouter.kHomeView);
     });
   }
 }
