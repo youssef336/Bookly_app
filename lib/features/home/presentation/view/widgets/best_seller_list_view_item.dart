@@ -22,7 +22,10 @@ class BestSellerListViewItem extends StatelessWidget {
         child: Row(
           children: [
             FeaturesListViewItem(
-              imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
+              imageUrl:
+                  bookModel.volumeInfo.imageLinks?.thumbnail == null
+                      ? ""
+                      : bookModel.volumeInfo.imageLinks!.thumbnail!,
             ),
             const SizedBox(width: 20),
             Expanded(
