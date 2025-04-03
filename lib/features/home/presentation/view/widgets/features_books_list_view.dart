@@ -1,9 +1,11 @@
+import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/widgets/custom_error_widget.dart';
 import 'package:bookly_app/core/widgets/custom_loading_indicator.dart';
 import 'package:bookly_app/features/home/presentation/manager/feature_book_cubit/feature_book_cubit.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/features-list-view-item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class FeaturesBooksListView extends StatelessWidget {
   const FeaturesBooksListView({super.key});
@@ -22,16 +24,24 @@ class FeaturesBooksListView extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.only(right: 14),
-                  child: FeaturesListViewItem(
-                    imageUrl:
-                        state.books[index].volumeInfo.imageLinks?.thumbnail ==
-                                null
-                            ? ""
-                            : state
-                                .books[index]
-                                .volumeInfo
-                                .imageLinks!
-                                .thumbnail!,
+                  child: GestureDetector(
+                    onTap: () {
+                      GoRouter.of(context).push(
+                        AppRouter.kBookDetailsView,
+                        extra: state.books[index],
+                      );
+                    },
+                    child: FeaturesListViewItem(
+                      imageUrl:
+                          state.books[index].volumeInfo.imageLinks?.thumbnail ==
+                                  null
+                              ? ""
+                              : state
+                                  .books[index]
+                                  .volumeInfo
+                                  .imageLinks!
+                                  .thumbnail!,
+                    ),
                   ),
                 );
               },
