@@ -1,14 +1,11 @@
 // ignore_for_file: camel_case_types
 
 import 'package:bookly_app/constant%20.dart';
-import 'package:bookly_app/core/utils/api_service.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/services_locator.dart';
-import 'package:bookly_app/features/home/data/repos/home_repo.dart';
 import 'package:bookly_app/features/home/data/repos/home_repo_impl.dart';
 import 'package:bookly_app/features/home/presentation/manager/feature_book_cubit/feature_book_cubit.dart';
 import 'package:bookly_app/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
-import 'package:dio/dio.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

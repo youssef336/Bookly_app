@@ -9,6 +9,7 @@ class HomeRepoImpl implements HomeRepo {
   final ApiService apiService;
   HomeRepoImpl(this.apiService);
   @override
+  // ignore: non_constant_identifier_names
   Future<Either<Failure, List<BookModel>>> FetchNewestBooks() async {
     try {
       var data = await apiService.get(
@@ -29,6 +30,7 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
+  // ignore: non_constant_identifier_names
   Future<Either<Failure, List<BookModel>>> FetchfeaturedBooks() async {
     try {
       var data = await apiService.get(
@@ -48,6 +50,7 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
+  // ignore: non_constant_identifier_names
   Future<Either<Failure, List<BookModel>>> FetchSimilarBooks({
     required String category,
   }) async {

@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:dio/dio.dart';
 
 abstract class Failure {
@@ -15,14 +13,11 @@ class ServerFailure extends Failure {
     switch (error.type) {
       case DioExceptionType.connectionTimeout:
         return ServerFailure(message: 'Connection timeout. Please try again.');
-      // TODO: Handle this case.
 
       case DioExceptionType.sendTimeout:
         return ServerFailure(message: 'Send timeout. Please try again.');
-      // TODO: Handle this case.
 
       case DioExceptionType.receiveTimeout:
-        // TODO: Handle this case.
         return ServerFailure(message: 'Receive timeout. Please try again.');
 
       case DioExceptionType.badCertificate:
@@ -41,8 +36,6 @@ class ServerFailure extends Failure {
         );
       case DioExceptionType.unknown:
         return ServerFailure(message: 'Unknown error. Please try again.');
-      default:
-        return ServerFailure(message: 'Opps there was an error');
     }
   }
 

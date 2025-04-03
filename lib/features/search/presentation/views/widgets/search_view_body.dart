@@ -1,13 +1,17 @@
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/features/home/presentation/view/widgets/best_seller_list_view_item.dart';
 import 'package:bookly_app/features/search/presentation/views/widgets/custom_search_text_feild.dart';
 import 'package:bookly_app/features/search/presentation/views/widgets/search_result_list_view.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class SearchViewBody extends StatelessWidget {
-  const SearchViewBody({super.key});
+class SearchViewBody extends StatefulWidget {
+  const SearchViewBody({super.key, required this.catagory});
+  final String catagory;
 
+  @override
+  State<SearchViewBody> createState() => _SearchViewBodyState();
+}
+
+class _SearchViewBodyState extends State<SearchViewBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(

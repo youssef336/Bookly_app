@@ -1,6 +1,5 @@
 import 'package:bookly_app/constant%20.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
-import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/book_rating.dart';
@@ -11,6 +10,7 @@ import 'package:go_router/go_router.dart';
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key, required this.bookModel});
   final BookModel bookModel;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -22,10 +22,7 @@ class BestSellerListViewItem extends StatelessWidget {
         child: Row(
           children: [
             FeaturesListViewItem(
-              imageUrl:
-                  bookModel.volumeInfo.imageLinks?.thumbnail == null
-                      ? ""
-                      : bookModel.volumeInfo.imageLinks!.thumbnail!,
+              imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? "",
             ),
             const SizedBox(width: 20),
             Expanded(
@@ -35,7 +32,7 @@ class BestSellerListViewItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.6,
                     child: Text(
-                      bookModel.volumeInfo.title!,
+                      bookModel.volumeInfo.title ?? "No Title",
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Styles.TextStyle20.copyWith(
@@ -45,7 +42,9 @@ class BestSellerListViewItem extends StatelessWidget {
                   ),
                   const SizedBox(height: 3),
                   Text(
-                    bookModel.volumeInfo.authors![0],
+                    _getFirstAuthor(bookModel),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: Styles.TextStyle14,
                   ),
                   const SizedBox(height: 3),
@@ -57,8 +56,7 @@ class BestSellerListViewItem extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(width: 36),
-
+                      const Spacer(),
                       BookRating(
                         rating: bookModel.volumeInfo.averageRating ?? 0,
                         count: bookModel.volumeInfo.ratingsCount ?? 0,
@@ -72,5 +70,12 @@ class BestSellerListViewItem extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String _getFirstAuthor(BookModel book) {
+    if (book.volumeInfo.authors == null || book.volumeInfo.authors!.isEmpty) {
+      return "Unknown Author";
+    }
+    return book.volumeInfo.authors![0];
   }
 }

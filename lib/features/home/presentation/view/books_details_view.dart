@@ -12,6 +12,7 @@ class BooksDetailsView extends StatefulWidget {
 }
 
 class _BooksDetailsViewState extends State<BooksDetailsView> {
+  @override
   void initState() {
     BlocProvider.of<SimilarBooksCubit>(
       context,

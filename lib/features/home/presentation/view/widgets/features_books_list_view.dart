@@ -40,7 +40,7 @@ class FeaturesBooksListView extends StatelessWidget {
                                   .books[index]
                                   .volumeInfo
                                   .imageLinks!
-                                  .thumbnail!,
+                                  .thumbnail,
                     ),
                   ),
                 );
