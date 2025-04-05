@@ -47,17 +47,17 @@ class _SplashViewbodyState extends State<SplashViewbody>
   void intanimation_splash_view() {
     animationController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 1),
+      duration: const Duration(seconds: 4),
     );
     animation = Tween<Offset>(
-      begin: const Offset(0, 10),
+      begin: const Offset(0, 15),
       end: const Offset(0, 0),
     ).animate(animationController);
     animationController.forward();
   }
 
   void navigatetohome() {
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 5), () {
       GoRouter.of(context).go(AppRouter.kHomeView);
     });
   }
