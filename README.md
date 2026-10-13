@@ -10,6 +10,11 @@
   <img src="https://img.shields.io/badge/Platform-Android%20%7C%20iOS-3DDC84?style=for-the-badge" alt="Android | iOS" />
 </p>
 
+<p align="center">
+  <img src="docs/screens.jpg" alt="Screens" width="100%"/>
+  <br/><sub>Home · Book details · Search</sub>
+</p>
+
 ## 📖 About
 
 Bookly is a dark-themed book-discovery app built while learning **clean architecture** and **Bloc** in Flutter. It pulls featured, newest and similar books from the public **Google Books API** through Dio, maps failures into typed `Failure`s with `dartz`'s `Either`, and drives each section with its own Cubit. Book details open the book's Google Books preview in the browser.
